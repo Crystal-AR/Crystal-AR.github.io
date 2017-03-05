@@ -35,7 +35,16 @@ menu > table td a:hover {
     color: hsl(240, 0%, 85%);
 }
 
+.tile-container {
+    text-align: center;
+}
 
+.tile {
+    display: inline-block;
+    width: 10em;
+    background-color: red;
+    margin: 1em;
+}
 
 footer {
     text-align: center;

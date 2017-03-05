@@ -1,8 +1,18 @@
-
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
 }
+
+
+
+
+
+
+
+
+
+
+/********** menu **********/
 
 menu {
     padding: 0;
@@ -34,6 +44,21 @@ menu > table td a:hover {
     color: hsl(240, 0%, 85%);
 }
 
+a {
+    color: hsl(240, 50%, 30%);
+}
+
+
+
+
+
+
+
+
+
+
+/********** main **********/
+
 .tile-container {
     text-align: center;
 }
@@ -62,11 +87,46 @@ menu > table td a:hover {
     width: 90%;
 }
 
+
+
+
+
+
+
+
+
+
+/********** footer **********/
+
 footer {
     text-align: center;
+    line-height: 2em;
 }
 
 footer > hr {
     width: 50%;
 }
 
+footer > table {
+    width: 100%;
+}
+
+footer > table td:nth-child(1) {
+    width: 6em;
+    text-align: right;
+}
+
+footer > table td:nth-child(2) {
+    text-align: center;
+    width: 5em;
+}
+
+footer > table td:nth-child(3) {
+    width: 6em;
+    text-align: left;
+}
+
+footer img {
+    width: 4em;
+    background-color: black;
+}

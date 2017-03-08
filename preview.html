@@ -1,0 +1,217 @@
+<p dir="ltr">
+    Project Overview
+</p>
+<br/>
+<p dir="ltr">
+    1.0 Project Description
+</p>
+<p dir="ltr">
+    Our project consists of two things:
+</p>
+<ol>
+    <li dir="ltr">
+        <p dir="ltr">
+            Crystal AR (library)
+        </p>
+    </li>
+    <li dir="ltr">
+        <p dir="ltr">
+            Demo application
+        </p>
+    </li>
+</ol>
+<br/>
+<p dir="ltr">
+    Github repositories:
+</p>
+<ol>
+    <li dir="ltr">
+        <p dir="ltr">
+            https://github.com/Crystal-AR/Crystal-AR
+        </p>
+    </li>
+    <li dir="ltr">
+        <p dir="ltr">
+            https://github.com/Crystal-AR/CrystalCompsDemo
+        </p>
+    </li>
+</ol>
+<br/>
+<p dir="ltr">
+    1.1 Library
+</p>
+<p dir="ltr">
+    We wrote a library that analyzes still image and live feed input from a
+    mobile device’s camera and allows the developers to integrate the following
+    features into mobile applications easily:
+</p>
+<ul>
+    <li dir="ltr">
+        <p dir="ltr">
+            Clickable url, emails and phone numbers
+        </p>
+    </li>
+    <ul>
+        <li dir="ltr">
+            <p dir="ltr">
+                The camera recognizes text structured as a urls, emails and
+                phone numbers allowing the developer to interact with them.
+            </p>
+        </li>
+    </ul>
+    <li dir="ltr">
+        <p dir="ltr">
+            Replace text with images (keeping all else constant)
+        </p>
+    </li>
+    <ul>
+        <li dir="ltr">
+            <p dir="ltr">
+                Finds and replaces text with images for a given set of string:
+                image mappings.
+            </p>
+        </li>
+    </ul>
+    <li dir="ltr">
+        <p dir="ltr">
+            Finds the corners of a table/quadrilateral and renders objects on
+            top.
+        </p>
+    </li>
+    <ul>
+        <li dir="ltr">
+            <p dir="ltr">
+                A developer can create an app that allows corner detection in
+                live camera mode (or still images) and augment objects to this
+                real live camera feed.
+            </p>
+        </li>
+    </ul>
+</ul>
+<br/>
+<p dir="ltr">
+    Text:
+</p>
+<p dir="ltr">
+    The optical character recognition (ocr) is done using Google’s Tesseract
+    OCR library. Regular expressions are used to find urls, phone numbers and
+    emails.
+</p>
+<br/>
+<p dir="ltr">
+    Corners:
+</p>
+<p dir="ltr">
+    Corner detection is done with an ad hoc algorithm where we track the amount
+    of time points along the edge of the table is the extrema values along a
+    set of x-y axis. The axis are rotated 360 degrees in this process to
+    account for the fact that the tables that we are finding the corners of are
+    not necessarily always at the same angle to the camera. Points along the
+    edge that are the extrema values for the longest amount of time are what we
+    will consider to be the corners of the table.
+</p>
+<br/>
+<p dir="ltr">
+    Objects:
+</p>
+<p dir="ltr">
+    Objects are rendered using 3rd party libraries embedded in our library.
+    These include Rajawali .OBJ objects. We design the library such that it
+    allows the developer to transform the objects in relation to
+    transformations happening in the live camera feed.
+</p>
+<br/>
+<p dir="ltr">
+    1.2 Demo application
+</p>
+<p dir="ltr">
+    We made a demo application to highlight the various features of Crystal AR.
+    The demo application is split into three activities (text, corner, model)
+    in order to explicitly show off the three main things that our library
+    accomplishes and can be used for.
+</p>
+<br/>
+<p dir="ltr">
+    2.0 Screenshots and videos
+</p>
+<p dir="ltr">
+    2.1 Text recognition demo
+</p>
+<p dir="ltr">
+    <img
+        src="https://lh3.googleusercontent.com/6EMYdjKicNTjGoF3L2haGu7PCgtGxkW48Dnm0KVj1vmsjmCzTKHuOqVEo9WSKdQGzMxVHXQANSTx6fLwBUYSA9Cj-0xjKP4VTFAjSkhUVaen4aVBzSXsQtBuxAuJBDIYvVMmo7Tl"
+        width="183"
+        height="315"
+    />
+</p>
+<br/>
+<p dir="ltr">
+    Replacing text with image:
+</p>
+<p dir="ltr">
+    <img
+        src="https://lh5.googleusercontent.com/cRCeK4CudwaZLe8x04w4yFOkAYFGM3Vk6DHBac8p48Kk1T_FJmH8WpVXvVZ_icaJkUN_3UwyZ61gggF_oTOCccoX1bpUnu7QeGoKaItGJrskAgD6BVjmsFAE1bS-1Y4OD66VPF6U"
+        width="179"
+        height="318"
+    />
+    <img
+        src="https://lh3.googleusercontent.com/wIKfRXDksDUzEaYpXB3orEtaupr8GIoy0alzu_kuH9wPEWjCvjPm7xK3e1ulVAA8VMHD36S2AK4XHeOCshcscg3lPenrOs8zGH1wnOABPrwEqDyvwZFd8OEvE-QBQd8S0UBhN2NO"
+        width="179"
+        height="319"
+    />
+</p>
+<br/>
+<p dir="ltr">
+    Video:
+</p>
+<p dir="ltr">
+    <a href="https://drive.google.com/open?id=0B2_SBlJmMD4QeGh5dTFJMTBZdk0">
+        https://drive.google.com/open?id=0B2_SBlJmMD4QeGh5dTFJMTBZdk0
+    </a>
+</p>
+<br/>
+<br/>
+<p dir="ltr">
+    2.2 Corner recognition demo
+</p>
+<p dir="ltr">
+    <img
+        src="https://lh5.googleusercontent.com/ERn_H32dy73r2usUYTj_ARoMiQVfAr18RFjXCz05W5wY4NY--JR1tofqeGpvPojWolV_XCDoBDbSbKiiL3imxrIt2uBXwRXGQbaD0_IPF1I0BX6qf5o4qU3t0RsBT2iWsGd7CgLE"
+        width="236"
+        height="215"
+        alt="angleda.jpg"
+    />
+</p>
+<br/>
+<p dir="ltr">
+    Video:
+</p>
+<p dir="ltr">
+    <a href="https://drive.google.com/open?id=0B2_SBlJmMD4QdGNmOTJOZVAxQ2M">
+        https://drive.google.com/open?id=0B2_SBlJmMD4QdGNmOTJOZVAxQ2M
+    </a>
+</p>
+<br/>
+<br/>
+<p dir="ltr">
+    2.3 Models rendering demo
+</p>
+<p dir="ltr">
+    <img
+        src="https://lh4.googleusercontent.com/8knIzs_IcwFLObUAVk0tiLI2hg1_fAqPYcYA3g9Zkpw_gzgvKIo0SM7ZCoSlqbO2qnIoOQHIEITuFjsS42g75E2itGoTRN5R4fIvlPjUCm2PG2rlR4KE-_aSdXs9A7JWd0Fyrub-"
+        width="242"
+        height="206"
+    />
+</p>
+<br/>
+<p dir="ltr">
+    Video:
+</p>
+<p dir="ltr">
+    <a href="https://drive.google.com/open?id=0B2_SBlJmMD4QREJkTFVQa2FpYmc">
+        https://drive.google.com/open?id=0B2_SBlJmMD4QREJkTFVQa2FpYmc
+    </a>
+</p>
+<div>
+    <br/>
+</div>

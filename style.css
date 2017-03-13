@@ -116,10 +116,10 @@ footer img:hover {
     background-color: hsl(280, 100%, 30%);
 }
 
-footer a {
+a {
     color: background-color: hsl(280, 100%, 25%);
 }
 
-footer a:hover {
+a:hover {
     color: background-color: hsl(280, 100%, 25%);
 }

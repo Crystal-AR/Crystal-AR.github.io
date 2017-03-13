@@ -1,71 +1,74 @@
+<!DOCTYPE html>
 <html>
-		<head>
-				<meta charset="utf-8">
-				<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0">
-				<link rel="stylesheet" type="text/css" href="style.css">
-		</head>
-		<body>
-				<menu>
-						<table>
-								<tbody>
-										<tr>
-												<td><a href="index.html">Crystal AR</a></td>
-												<td><a href="library.html">Docs</a></td>
-												<td><a href="demo.html">Demo</a></td>
-										</tr>
-								</tbody>
-						</table>
-				</menu>
-				<main>
-				<h1>Overview</h1>
-				<p>1.0 Project Description<br>
-				Our project consists of two things:<br>
-				Crystal AR (library)<br>
-				Demo application</p>
-				<p>Github repositories:</p>
-				<ol>
-						<li><a href="https://github.com/Crystal-AR/Crystal-AR">Library</a></li>
-						<li><a href="https://github.com/Crystal-AR/CrystalCompsDemo">Demo Application</a></li>
-				</ol>
-				<h1><a id="11_Library_9"></a>1.1 Library</h1>
-				<p>We wrote a library that analyzes still image and live feed input from a mobile device’s camera and allows the developers to integrate the following features into mobile applications easily:<br>
-				Clickable url, emails and phone numbers<br>
-				The camera recognizes text structured as a urls, emails and phone numbers allowing the developer to interact with them.<br>
-				Replace text with images (keeping all else constant)<br>
-				Finds and replaces text with images for a given set of string: image mappings.<br>
-				Finds the corners of a table/quadrilateral and renders objects on top.<br>
-				A developer can create an app that allows corner detection in live camera mode (or still images) and augment objects to this real live camera feed.</p>
-				<h2><a id="Text_18"></a>Text:</h2>
-				<p>The optical character recognition (ocr) is done using Google’s Tesseract OCR library. Regular expressions are used to find urls, phone numbers and emails.</p>
-				<h2><a id="Corners_21"></a>Corners:</h2>
-				<p>Corner detection is done with an ad hoc algorithm where we track the amount of time points along the edge of the table is the extrema values along a set of x-y axis. The axis are rotated 360 degrees in this process to account for the fact that the tables that we are finding the corners of are not necessarily always at the same angle to the camera. Points along the edge that are the extrema values for the longest amount of time are what we will consider to be the corners of the table.</p>
-				<h2><a id="Objects_24"></a>Objects:</h2>
-				<p>Objects are rendered using 3rd party libraries embedded in our library. These include Rajawali .OBJ objects. We design the library such that it allows the developer to transform the objects in relation to transformations happening in the live camera feed.</p>
-				<h1><a id="12_Demo_application_27"></a>1.2 Demo application</h1>
-				<p>We made a demo application to highlight the various features of Crystal AR. The demo application is split into three activities (text, corner, model) in order to explicitly show off the three main things that our library accomplishes and can be used for.</p>
-				<div class="tile-container">
-						<div class="tile">
-								<h1>Recognize Text</h1>
-								<img src="photos/taking_photo_ocr.png" alt="">
-						</div>
+<head>
+    <title></title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="jquery.js"></script>
+<script>
 
-						<div class="tile">
-								<h1>Detect Corners</h1>
-								<img src="photos/corners.jpg" alt="">
-						</div>
-				</div>
-				</main>
-				<footer>
-						<hr>
-						<table>
-								<tbody>
-										<tr>
-												<td><a href="https://github.com/Crystal-AR/Crystal-AR">Library</a></td>
-												<td><img src="photos/github.png"/></td>
-												<td><a href="https://github.com/Crystal-AR/CrystalCompsDemo">Demo</a></td>
-										</tr>
-								</tbody>
-						</table>
-				</footer>
-		</body>
+$("#menu").ready(function() {
+    $("#menu > li > span").click(function (obj) {
+        var me = $(obj.delegateTarget.parentNode).find("> ol");
+        if (me.css("display") == "block") {
+            me.css("display", "none");
+        }
+        else {
+            $("#menu > li > ol").css({
+                "display": "none",
+            });
+            $(obj.delegateTarget.parentNode).find("> ol").css({
+                "display": "block"
+            });
+        }
+        return false;
+    });
+    $("body").click(function() {
+        $("#menu > li > ol").css({
+            "display": "none",
+        });
+    })
+})
+
+// http://stackoverflow.com/questions/9975810/make-iframe-automatically-adjust-height-according-to-the-contents-without-using
+function resizeIframe(obj) {
+    obj.style.height = (obj.contentWindow.document.body.scrollHeight + 20) + 'px';
+}
+
+// http://stackoverflow.com/questions/3730159/changing-iframe-src-with-javascript
+function changeIframeSrc(src) {
+    var me = document.getElementById("main-frame");
+    me.src = src;
+    resizeIframe(me);
+}
+
+</script>
+</head>
+<body>
+<table id="main_table">
+<tbody>
+<tr><td>
+<ol id="menu">
+<li><span onclick="javascript:changeIframeSrc('home.html')">Home</span></li><li><span>CrystalAR</span><ol><li onclick="javascript:changeIframeSrc('CrystalAR/cornerfinder.html')">cornerfinder</li><li onclick="javascript:changeIframeSrc('CrystalAR/crystalar.html')">crystalar</li><li onclick="javascript:changeIframeSrc('CrystalAR/crystalcustomqueue.html')">crystalcustomqueue</li><li onclick="javascript:changeIframeSrc('CrystalAR/gettingstarted.html')">gettingstarted</li><li onclick="javascript:changeIframeSrc('CrystalAR/home.html')">home</li><li onclick="javascript:changeIframeSrc('CrystalAR/intpair.html')">intpair</li><li onclick="javascript:changeIframeSrc('CrystalAR/word.html')">word</li></ol></li><li><span>DemoApp</span><ol><li onclick="javascript:changeIframeSrc('DemoApp/corneractivity.html')">corneractivity</li><li onclick="javascript:changeIframeSrc('DemoApp/home.html')">home</li><li onclick="javascript:changeIframeSrc('DemoApp/mainactivity.html')">mainactivity</li><li onclick="javascript:changeIframeSrc('DemoApp/tableview.html')">tableview</li><li onclick="javascript:changeIframeSrc('DemoApp/textactivity.html')">textactivity</li></ol></li>
+</ol>
+</td></tr>
+<tr><td id="iframe_container">
+<iframe id="main-frame" frameborder="0" scrolling="no" src="home.html" onload="resizeIframe(this);">
+</iframe>
+</td></tr>
+<tr><td>
+<footer>
+<table>
+<tbody>
+<tr>
+    <td><a href="https://github.com/Crystal-AR/Crystal-AR">Library</a></td>
+    <td><img src="photos/github.png"/></td>
+    <td><a href="https://github.com/Crystal-AR/CrystalCompsDemo">Demo</a></td>
+</tr>
+</tbody>
+</table>
+</footer>
+</td></tr>
+</tbody>
+</table>
+</body>
 </html>

@@ -20,35 +20,33 @@ img {
 <body>
 <main style="">
 <h1>Overview</h1>
-<p>1.0 Project Description<br>
-Our project consists of two things:<br>
-Crystal AR (library)<br>
-Demo application</p>
-<p>Github repositories:</p>
+Our project consists of two things:
 <ol>
-		<li><a href="https://github.com/Crystal-AR/Crystal-AR">Library</a></li>
-		<li><a href="https://github.com/Crystal-AR/CrystalCompsDemo">Demo Application</a></li>
+<li>Crystal AR (library) (<a href="https://github.com/Crystal-AR/Crystal-AR">repo</a>)</li>
+<li>Demo application (<a href="https://github.com/Crystal-AR/CrystalCompsDemo">rep</a>)</li>
 </ol>
 <h1><a id="11_Library_9"></a>1.1 Library</h1>
-<p>We wrote a library that analyzes still image and live feed input from a mobile device’s camera and allows the developers to integrate the following features into mobile applications easily:<br>
-Clickable url, emails and phone numbers<br>
-The camera recognizes text structured as a urls, emails and phone numbers allowing the developer to interact with them.<br>
-Replace text with images (keeping all else constant)<br>
-Finds and replaces text with images for a given set of string: image mappings.<br>
-Finds the corners of a table/quadrilateral and renders objects on top.<br>
-A developer can create an app that allows corner detection in live camera mode (or still images) and augment objects to this real live camera feed.</p>
-<h2><a id="Text_18"></a>Text:</h2>
-<p>The optical character recognition (ocr) is done using Google’s Tesseract OCR library. Regular expressions are used to find urls, phone numbers and emails.</p>
-<h2><a id="Corners_21"></a>Corners:</h2>
-<p>Corner detection is done with an ad hoc algorithm where we track the amount of time points along the edge of the table is the extrema values along a set of x-y axis. The axis are rotated 360 degrees in this process to account for the fact that the tables that we are finding the corners of are not necessarily always at the same angle to the camera. Points along the edge that are the extrema values for the longest amount of time are what we will consider to be the corners of the table.</p>
-<h2><a id="Objects_24"></a>Objects:</h2>
-<p>Objects are rendered using 3rd party libraries embedded in our library. These include Rajawali .OBJ objects. We design the library such that it allows the developer to transform the objects in relation to transformations happening in the live camera feed.</p>
-<h1><a id="12_Demo_application_27"></a>1.2 Demo application</h1>
+<p>We wrote a library that analyzes still image and live feed input from a mobile device’s camera and allows the developers to integrate the following features into mobile applications easily:
+<ol>
+    <li>Clickable url, emails and phone numbers: The camera recognizes text structured as a urls, emails and phone numbers allowing the developer to interact with them.</li>
+    <li>
+    Replace text with images (keeping all else constant):
+    Finds and replaces text with images for a given set of string: image mappings.</li>
+    <li>Finds the corners of a table/quadrilateral and renders objects on top:
+    A developer can create an app that allows corner detection in live camera mode (or still images) and augment objects to this real live camera feed.</li>
+</ol>
+<h2>Text</h2>
+    <p>The optical character recognition (ocr) is done using Google’s Tesseract OCR library. Regular expressions are used to find urls, phone numbers and emails.</p>
+<h2>Corners</h2>
+    <p>Corner detection is done with an ad hoc algorithm where we track the amount of time points along the edge of the table is the extrema values along a set of x-y axis. The axis are rotated 360 degrees in this process to account for the fact that the tables that we are finding the corners of are not necessarily always at the same angle to the camera. Points along the edge that are the extrema values for the longest amount of time are what we will consider to be the corners of the table.</p>
+<h2>Objects</h2>
+    <p>Objects are rendered using 3rd party libraries embedded in our library. These include Rajawali .OBJ objects. We design the library such that it allows the developer to transform the objects in relation to transformations happening in the live camera feed.</p>
+<h1>Demo Application</h1>
 <p>We made a demo application to highlight the various features of Crystal AR. The demo application is split into three activities (text, corner, model) in order to explicitly show off the three main things that our library accomplishes and can be used for.</p>
-<h1>Screenshots and videos</h1>
-Text recognition demo:
+<h2>Screenshots and videos</h2>
+<h3>Text recognition demo</h3>
 <img src="photos/word_rectangles.png"/>
-Replacing text with image:
+<h3>Replacing text with image</h3>
 <table style="margin: 0 auto;">
 <tbody>
 <tr><td>
@@ -58,17 +56,15 @@ Replacing text with image:
 </td></tr>
 </tbody>
 </table>
-Video: <a href="Sequence 01.mp4">Sequence 01.mp4</a>
+Video: <a href="videos/Sequence 01.mp4">Sequence 01.mp4</a>
 <br/>
-Corner recognition demo:
+<h3>Corner recognition demo</h3>
 <img src="photos/corners.jpg"/>
 Video: <a href="videos/Sequence 03.mp4">Sequence 03.mp4</a>
-Models rendering demo:
+<h3>Models rendering demo</h3>
 <img src="photos/models_on_table.png"/>
-Video:
-<a href="videos/Sequence 02.mp4">Sequence 02.mp4</a>
-<br/>
-<a href="videos/Sequence 02_1.mp4">Sequence 02_1.mp4</a>
+Videos:
+<a href="videos/Sequence 02.mp4">Sequence 02.mp4</a> and <a href="videos/Sequence 02_1.mp4">Sequence 02_1.mp4</a>
 </main>
 </body>
 </html>

@@ -30,7 +30,8 @@ $("#menu").ready(function() {
 })
 
 // http://stackoverflow.com/questions/9975810/make-iframe-automatically-adjust-height-according-to-the-contents-without-using
-function resizeIframe(obj) {
+function resizeIframe() {
+    var obj = document.getElementById("main-frame");
     obj.style.height = (obj.contentWindow.document.body.scrollHeight + 20) + 'px';
 }
 
@@ -38,7 +39,7 @@ function resizeIframe(obj) {
 function changeIframeSrc(src) {
     var me = document.getElementById("main-frame");
     me.src = src;
-    resizeIframe(me);
+    resizeIframe();
 }
 
 </script>
@@ -52,7 +53,7 @@ function changeIframeSrc(src) {
 </ol>
 </td></tr>
 <tr><td id="iframe_container">
-<iframe id="main-frame" frameborder="0" scrolling="no" src="home.html" onload="resizeIframe(this);">
+<iframe id="main-frame" frameborder="0" scrolling="no" src="home.html" onload="resizeIframe();">
 </iframe>
 </td></tr>
 <tr><td>
@@ -61,7 +62,7 @@ function changeIframeSrc(src) {
 <tbody>
 <tr>
     <td><a href="https://github.com/Crystal-AR/Crystal-AR">Library</a></td>
-    <td><img src="photos/github.png"/></td>
+    <td><a href="https://github.com/Crystal-AR"><img src="photos/github.png"/></a></td>
     <td><a href="https://github.com/Crystal-AR/CrystalCompsDemo">Demo</a></td>
 </tr>
 </tbody>

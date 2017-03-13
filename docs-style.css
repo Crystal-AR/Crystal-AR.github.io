@@ -2,3 +2,11 @@
 * {
     max-width: 40em !important;
 }
+
+h3 {
+    color: white !important;
+    background-color: hsl(280, 100%, 30%) !important;
+    padding: 0.3em;
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+}

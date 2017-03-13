@@ -52,11 +52,12 @@ iframe {
 #menu > li > span {
     display: block;
     width: 100%;
-    background-color: hsl(240, 100%, 90%);
+    background-color: hsl(280, 100%, 20%);
+    color: white;
 }
 
 #menu > li > span:hover {
-    background-color: hsl(240, 100%, 95%);
+    background-color: hsl(280, 100%, 30%);
 }
 
 #menu > li > ol {
@@ -72,15 +73,17 @@ iframe {
 #menu > li > ol > li {
     display: inline-block;
     width: 33.33vw;
-    background-color: hsl(240, 100%, 90%);
+    background-color: hsl(280, 100%, 20%);
+    color: white;
 }
 
 #menu > li > ol > li:hover {
-    background-color: hsl(240, 100%, 95%);
+    background-color: hsl(280, 100%, 30%);
 }
 
 footer {
-    margin-top: 3em;
+    margin-top: 5em;
+    margin-bottom: 2em;
     text-align: center;
     line-height: 2em;
 }
@@ -106,5 +109,17 @@ footer > table td:nth-child(3) {
 
 footer img {
     width: 4em;
-    background-color: black;
+    background-color: hsl(280, 100%, 25%);
+}
+
+footer img:hover {
+    background-color: hsl(280, 100%, 30%);
+}
+
+footer a {
+    color: background-color: hsl(280, 100%, 25%);
+}
+
+footer a:hover {
+    color: background-color: hsl(280, 100%, 25%);
 }

@@ -51,16 +51,16 @@
 
                 <h3>
                   <span class="octicon octicon-book"></span>
-                  CornerActivity.md
+                  ModelActivity.md
                 </h3>
 
               <article class="markdown-body entry-content" itemprop="text" id="grip-content">
-                <p>Class for activity that finds corners on an image</p>
+                <p>Class for activity that augments reality with models rendered through Rajawali</p>
 
 <h3>
 <a id="user-content-methods" class="anchor" href="#methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Methods</h3>
 
-<table>
+<table >
 <thead>
 <tr>
 <th align="center">Method Signature</th>
@@ -72,7 +72,12 @@
 <tr>
 <td align="center">onCreate(Bundle savedInstanceState)</td>
 <td align="center">void</td>
-<td align="center">Bind imageView and button, create OnClickListener for camera and load photo buttons, create CrystalAr object.</td>
+<td align="center">Bind textureView , create OnClickListener for camera and OnSensorListerner for accelerometer sensor, create CrystalAr object. It also initialise a model instance and waits for an object to be placed</td>
+</tr>
+<tr>
+<td align="center">openCamera(Bundle savedInstanceState)</td>
+<td align="center">void</td>
+<td align="center">Initialises the live camera feed and bindes the camera to the current instance. </td>
 </tr>
 <tr>
 <td align="center">onActivityResult(int requestCode, int resultCode, Intent data)</td>
@@ -83,6 +88,11 @@
 <td align="center">initiateCornerHandler(ImageView imageView)</td>
 <td align="center">void</td>
 <td align="center">Start thread to detect corners. This thread is created from the findCornersRunnable passed back from CrystalAR which takes in our cornerHandler and photo</td>
+</tr>
+<tr>
+<td align="center">model.render()</td>
+<td align="center">void</td>
+<td align="center">renders the model on the given live camera feed textureView</td>
 </tr>
 </tbody>
 </table>
